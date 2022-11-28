@@ -1,8 +1,7 @@
-FROM golang:1.19-bullseye
+FROM node
 
 RUN mkdir -p /app
 COPY . /app
 WORKDIR /app
-RUN yarn
-RUN yarn run dev
+RUN yarn && yarn run dev
 ENTRYPOINT /app/ySync
